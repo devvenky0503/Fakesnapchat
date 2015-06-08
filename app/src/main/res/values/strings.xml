@@ -42,4 +42,12 @@
         <item>Choose picture</item>
         <item>Choose video</item>
     </string-array>
+    <string name="title_activity_recipients">Choose</string>
+    <string name="empty_recipients_list_msg">Choose some friends first</string>
+    <string name="menu_send_label">send</string>
+    <string name="error_selecting_file">There\'s an error with the file selected</string>
+    <string name="error_selecting_file_title">We\'re sorry</string>
+    <string name="success_message">Message sent</string>
+    <string name="error_send_in_message">There\'s an error sending your message. Please try agian!!</string>
+    <string name="title_activity_view_image">Ribbit</string>
 </resources>

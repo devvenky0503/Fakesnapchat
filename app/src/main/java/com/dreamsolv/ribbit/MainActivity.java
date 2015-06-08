@@ -240,6 +240,16 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 sendBroadcast(mediaScanIntent);
             }
 
+            Intent recipientIntent = new Intent(this, RecipientsActivity.class);
+            recipientIntent.setData(mMediaUri);
+            String fileType;
+            if (requestCode == REQUEST_PICK_PHOTO || requestCode == REQUEST_IMAGE_CAPTURE) {
+                fileType = ParseConstants.TYPE_IMAGE;
+            } else {
+                fileType = ParseConstants.TYPE_VIDEO;
+            }
+            recipientIntent.putExtra(ParseConstants.KEY_FILE_TYPE, fileType);
+            startActivity(recipientIntent);
         }
         else  if (resultCode == RESULT_CANCELED) {
             Log.e(TAG,getString(R.string.general_error));
@@ -306,5 +316,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }
+
 
 }
